@@ -1,0 +1,38 @@
+{
+    "compilerOptions": {
+      "baseUrl": "./",
+      "target": "ESNext",
+      "useDefineForClassFields": true,
+      "module": "ESNext",
+      "lib": ["ESNext", "DOM", "DOM.Iterable"],
+      "skipLibCheck": true,
+  
+      /* Bundler mode */
+      "moduleResolution": "Node",
+      "isolatedModules": true,
+      "noEmit": false,
+      "emitDeclarationOnly": true,
+      "declaration": true,
+      "jsx": "preserve",
+  
+      /* Linting */
+      "strict": false,
+      "noImplicitAny": false,
+      "noImplicitThis": false,
+      "strictNullChecks": false,
+      "strictFunctionTypes": false,
+      "noUnusedLocals": false,
+      "noUnusedParameters": false,
+      "noImplicitReturns": false,
+      "allowUnusedLabels": true,
+      "allowUnreachableCode": true,
+      "outDir": "release/types",
+      "paths": {
+        "@/*": ["lib/*"],
+        "#/*": ["types/*"]
+      }
+    },
+    "include": ["lib/**/*.ts", "lib/**/*.d.ts", "lib/**/*.vue", "types/*.d.ts"],
+    "references": [{ "path": "./tsconfig.node.json" }]
+  }
+  
