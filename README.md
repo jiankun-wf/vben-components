@@ -1,5 +1,34 @@
-# Vben-admin BasicForm 与 BasicTable 提取
+# Vben-admin 公共组件提取
 
-`import { BasicForm, useForm } from 'vue-generic-components'` \n
+## 导入内容！
 
-`import { BasicTable, useTable, type BasicColumn, type FormSchema } from 'vue-generic-components'`
+1. BasicForm
+2. BasicTable
+3. BasicModal
+
+`
+export {
+  BasicForm,
+  formComponentRegister,
+  formComponentDel,
+  useForm,
+} from "./components/Form";
+
+export type { FormProps, FormActionType } from "./components/Form";
+
+export {
+  BasicTable,
+  useTable,
+  TableAction,
+  TableImg,
+} from "./components/Table";
+
+export type {
+  BasicTableProps,
+  FormSchema,
+  ActionItem as TableActionItem,
+  BasicColumn,
+} from "./components/Table";
+
+export { BasicModal, useModal, useModalInner } from "./components/Modal";
+`
