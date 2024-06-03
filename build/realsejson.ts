@@ -1,7 +1,7 @@
 import { resolve } from "path";
 import fs from "fs";
 
-export const writePackageJson = async (type: "main" | "second" | "smaller") => {
+export const writePackageJson = (type: "main" | "second" | "smaller") => {
   const f = fs.readFileSync(resolve(process.cwd(), "package.json"), "utf-8");
 
   const info = JSON.parse(f.toString());
@@ -35,5 +35,14 @@ export const writePackageJson = async (type: "main" | "second" | "smaller") => {
   fs.writeFileSync(
     resolve(process.cwd(), "release", "package.json"),
     JSON.stringify(info, null, 2)
+  );
+};
+
+export const writeReadme = () => {
+  const f = fs.readFileSync(resolve(process.cwd(), "README.md"), "utf-8");
+
+  fs.writeFileSync(
+    resolve(process.cwd(), "release", "README.md"),
+    f.toString()
   );
 };

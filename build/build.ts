@@ -1,6 +1,6 @@
 import { build } from "vite";
 import path from "path";
-import { writePackageJson } from "./realsejson.ts";
+import { writePackageJson, writeReadme } from "./realsejson.ts";
 const start = async () => {
   await build({
     configFile: path.resolve(process.cwd(), "build", "vite.build.ts"),
@@ -9,6 +9,7 @@ const start = async () => {
   const updateType = process.argv[2];
 
   writePackageJson(updateType as "main" | "second" | "smaller");
+  writeReadme();
 };
 
 void start();

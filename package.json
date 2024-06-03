@@ -1,7 +1,7 @@
 {
   "name": "vben-components",
   "private": false,
-  "version": "1.0.1",
+  "version": "2.0.0",
   "type": "module",
   "description": "vben-admin的功能组件提取",
   "keywords": [
