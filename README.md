@@ -6,7 +6,7 @@
 2. BasicTable
 3. BasicModal
 
-`
+```
 export {
   BasicForm,
   formComponentRegister,
@@ -31,4 +31,4 @@ export type {
 } from "./components/Table";
 
 export { BasicModal, useModal, useModalInner } from "./components/Modal";
-`
+```
