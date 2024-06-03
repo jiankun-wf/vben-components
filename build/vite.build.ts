@@ -8,21 +8,18 @@ import { resolve } from "path";
 const pathResolve = (path: string, lib = true) =>
   resolve(`${process.cwd()}`, lib ? "lib" : "", path);
 
-// https://vitejs.dev/config/
 export default defineConfig(({ command }) => {
   const isBuild = command === "build";
-
   return {
     plugins: [
       vue(),
       vueJsx(),
       isBuild &&
         visualizer({
+          filename: "stats.html",
           gzipSize: true,
-          brotliSize: true,
-          emitFile: false,
-          filename: "analyse.html", //分析图生成的文件名
-          open: true, //如果存在本地服务端口，将在打包后自动展示
+          emitFile: true,
+          open: true,
         }),
     ],
     resolve: {
@@ -50,6 +47,26 @@ export default defineConfig(({ command }) => {
           javascriptEnabled: true,
         },
       },
+    },
+
+    build: {
+      lib: {
+        entry: "lib/index.ts",
+        name: "GenericComponents",
+        formats: ["es", "cjs", "iife"],
+      },
+      rollupOptions: {
+        external: ["vue"],
+        output: {
+          globals: {
+            vue: "Vue",
+          },
+          entryFileNames: "[format]/index.js",
+          chunkFileNames: "[format]/[name].js",
+          assetFileNames: "assets/[name].[ext]",
+        },
+      },
+      outDir: "release",
     },
   };
 });

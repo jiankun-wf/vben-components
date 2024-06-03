@@ -93,10 +93,10 @@ export declare function useItemLabelWidth(schemaItemRef: Ref<FormSchema>, propsR
             span: string | number;
             offset: string | number;
         };
+        push?: string | number;
         span?: string | number;
         order?: string | number;
         offset?: string | number;
-        push?: string | number;
         pull?: string | number;
         prefixCls?: string;
         flex?: string | number;
@@ -298,10 +298,10 @@ export declare function useItemLabelWidth(schemaItemRef: Ref<FormSchema>, propsR
             span: string | number;
             offset: string | number;
         };
+        push?: string | number;
         span?: string | number;
         order?: string | number;
         offset?: string | number;
-        push?: string | number;
         pull?: string | number;
         prefixCls?: string;
         flex?: string | number;

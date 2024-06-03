@@ -22,3 +22,5 @@ export type {
 } from "./components/Table";
 
 export { BasicModal, useModal, useModalInner } from "./components/Modal";
+
+export { PageWrapper as BasicPage } from "./components/Page";

@@ -1,13 +1,30 @@
 {
-  "name": "basic-components",
-  "private": true,
-  "version": "0.0.0",
+  "name": "vben-components",
+  "private": false,
+  "version": "1.0.1",
   "type": "module",
+  "description": "vben-admin的功能组件提取",
+  "keywords": [
+    "vue3",
+    "typescript",
+    "vben-admin",
+    "vue3-low-code"
+  ],
+  "homepage": "https://github.com/jiankun-wf/vben-components",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jiankun-wf/vben-components"
+  },
+  "author": {
+    "name": "jiankun"
+  },
   "scripts": {
     "dev": "vite",
     "build": "vue-tsc && vite build",
     "preview": "vite preview",
-    "build:lib": "cross-env NODE_ENV=production vue-tsc && node --loader ts-node/esm ./build/build.ts && tsc -p ./tsconfig.declaration.json"
+    "build:lib:main": "cross-env NODE_ENV=production vue-tsc && node --loader ts-node/esm ./build/build.ts main && tsc -p ./tsconfig.declaration.json",
+    "build:lib:second": "cross-env NODE_ENV=production vue-tsc && node --loader ts-node/esm ./build/build.ts second && tsc -p ./tsconfig.declaration.json",
+    "build:lib:smaller": "cross-env NODE_ENV=production vue-tsc && node --loader ts-node/esm ./build/build.ts smaller && tsc -p ./tsconfig.declaration.json"
   },
   "dependencies": {
     "vue": "^3.4.21"
@@ -25,7 +42,9 @@
     "less": "^4.2.0",
     "less-loader": "^12.2.0",
     "lodash-es": "^4.17.21",
+    "rollup-plugin-visualizer": "^5.12.0",
     "sortablejs": "^1.15.2",
+    "ts-node": "^10.9.2",
     "typescript": "^5.2.2",
     "vite": "^5.2.0",
     "vue-tsc": "^2.0.6"

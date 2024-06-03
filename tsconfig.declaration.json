@@ -14,7 +14,7 @@
       "emitDeclarationOnly": true,
       "declaration": true,
       "jsx": "preserve",
-  
+      "allowSyntheticDefaultImports": true,
       /* Linting */
       "strict": false,
       "noImplicitAny": false,

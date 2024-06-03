@@ -364,8 +364,7 @@ emit("register", tableAction, formActions);
 defineExpose({ tableElRef, ...tableAction });
 </script>
 <style lang="less">
-@border-color: #cecece4d;
-@component-background: #fff;
+
 
 @prefix-cls: ~"@{namespace}-basic-table";
 

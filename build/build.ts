@@ -1,19 +1,14 @@
 import { build } from "vite";
 import path from "path";
-
-console.log(import.meta.dirname);
-const start = () => {
-  build({
-    configFile: path.resolve(process.cwd(), "build", "vite.build-es.ts"),
+import { writePackageJson } from "./realsejson.ts";
+const start = async () => {
+  await build({
+    configFile: path.resolve(process.cwd(), "build", "vite.build.ts"),
   });
 
-  build({
-    configFile: path.resolve(process.cwd(), "build", "vite.build-cjs.ts"),
-  });
+  const updateType = process.argv[2];
 
-  build({
-    configFile: path.resolve(process.cwd(), "build", "vite.build-umd.ts"),
-  });
+  writePackageJson(updateType as "main" | "second" | "smaller");
 };
 
 void start();
