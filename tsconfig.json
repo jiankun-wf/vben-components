@@ -25,6 +25,6 @@
       "#/*": ["types/*"]
     }
   },
-  "include": ["lib/**/*.ts", "lib/**/*.tsx", "lib/**/*.vue", "types/*.d.ts"],
+  "include": ["lib/**/*.ts", "lib/**/*.tsx", "lib/**/*.vue", "types/*.d.ts", "example/**/*.ts", "example/**/*.tsx", "example/**/*.vue"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }

@@ -25,16 +25,16 @@
       v-if="dropDownActions && getDropdownList.length > 0"
     >
       <slot name="more"></slot>
-      <a-button type="link" size="small" v-if="!$slots.more">
+      <Button type="link" size="small" v-if="!$slots.more">
         <MoreOutlined class="icon-more" />
-      </a-button>
+      </Button>
     </Dropdown>
   </div>
 </template>
 <script lang="ts" setup>
 import { PropType, computed, toRaw, unref } from "vue";
 import { MoreOutlined } from "@ant-design/icons-vue";
-import { Divider, Tooltip, TooltipProps } from "ant-design-vue";
+import { Button, Divider, Tooltip, TooltipProps } from "ant-design-vue";
 import { ActionItem, TableActionType } from "@/components/Table";
 import { PopConfirmButton } from "@/components/Button";
 import { Dropdown } from "@/components/Dropdown";

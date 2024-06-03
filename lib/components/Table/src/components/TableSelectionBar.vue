@@ -5,14 +5,14 @@
         {{ `已选择 ${count} 条记录` }}
       </span>
       <span v-else> 未选中任何记录 </span>
-      <a-button
+      <Button
         type="link"
         @click="clearSelectedRowKeys"
         size="small"
         v-show="props.count > 0"
       >
         清空
-      </a-button>
+      </Button>
     </template>
   </a-alert>
 </template>
@@ -21,7 +21,7 @@
 import { useDesign } from "@/hooks/web/useDesign";
 
 import type { TableActionType } from "../types/table";
-import { Alert as AAlert } from "ant-design-vue";
+import { Alert as AAlert, Button } from "ant-design-vue";
 
 const { prefixCls } = useDesign("table-select-bar");
 

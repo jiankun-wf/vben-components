@@ -35,7 +35,7 @@
             勾选列
           </Checkbox>
 
-          <a-button size="small" type="link" @click="onReset"> 重置 </a-button>
+          <Button size="small" type="link" @click="onReset"> 重置 </Button>
         </div>
       </template>
 
@@ -115,7 +115,7 @@ import {
   watch,
   onMounted,
 } from "vue";
-import { Tooltip, Popover, Checkbox, Divider } from "ant-design-vue";
+import { Tooltip, Popover, Checkbox, Divider, Button } from "ant-design-vue";
 import type { CheckboxChangeEvent } from "ant-design-vue/lib/checkbox/interface";
 import {
   SettingOutlined,

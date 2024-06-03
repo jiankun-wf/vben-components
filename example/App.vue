@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { BasicTable, useTable } from "../lib/components/Table";
-
+import { useModal } from "@/index";
+import { default as TestModal } from "./components/modal.vue";
 // import { BasicTable, useTable } from "../release/es/index";
 // import "../release/es/style.css";
 
@@ -15,6 +16,12 @@ import { BasicTable, useTable } from "../lib/components/Table";
 //     label: "你好",
 //   },
 // ];
+
+const [registerTestModal, { openModal }] = useModal();
+
+const handleOpen = () => {
+  openModal(true, "123");
+};
 
 const [registerTable] = useTable({
   title: "你好啊",
@@ -58,9 +65,9 @@ const [registerTable] = useTable({
 </script>
 
 <template>
-  <!-- <BasicForm :schemas="schemas" /> -->
-
   <BasicTable @register="registerTable" />
-</template>
 
+  <div @click="handleOpen">打开</div>
+  <TestModal @register="registerTestModal" />
+</template>
 <style scoped></style>

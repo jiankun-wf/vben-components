@@ -117,8 +117,8 @@ async function setModalHeight() {
   if (!props.open) return;
   const wrapperRefDom = unref(wrapperRef);
   if (!wrapperRefDom) return;
-
-  const bodyDom = (wrapperRefDom as any).$el.parentElement;
+  const bodyDom =
+    (wrapperRefDom as any)?.$el?.parentElement ?? wrapperRefDom.parentElement;
   if (!bodyDom) return;
   bodyDom.style.padding = "0";
   await nextTick();
