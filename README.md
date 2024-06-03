@@ -6,7 +6,7 @@
 2. BasicTable
 3. BasicModal
 
-```
+```typescript
 export {
   BasicForm,
   formComponentRegister,
