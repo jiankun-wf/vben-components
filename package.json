@@ -1,7 +1,7 @@
 {
   "name": "vben-components",
   "private": false,
-  "version": "2.0.0",
+  "version": "0.0.0",
   "type": "module",
   "description": "vben-admin的功能组件提取",
   "keywords": [
@@ -10,6 +10,9 @@
     "vben-admin",
     "vue3-low-code"
   ],
+  "exports": {
+    
+  },
   "homepage": "https://github.com/jiankun-wf/vben-components",
   "repository": {
     "type": "git",
@@ -32,21 +35,38 @@
   "devDependencies": {
     "@ant-design/colors": "^7.0.2",
     "@ant-design/icons-vue": "^7.0.1",
+    "@fingerprintjs/fingerprintjs": "^4.4.1",
+    "@purge-icons/generated": "^0.10.0",
     "@types/lodash-es": "^4.17.12",
     "@types/sortablejs": "^1.15.8",
     "@vitejs/plugin-vue": "^5.0.4",
     "@vitejs/plugin-vue-jsx": "^3.1.0",
     "@vueuse/core": "^10.9.0",
     "ant-design-vue": "^4.2.1",
+    "axios": "^1.7.2",
     "cross-env": "^7.0.3",
+    "crypto-js": "^4.2.0",
+    "dayjs": "^1.11.11",
+    "echarts": "^5.5.0",
     "less": "^4.2.0",
     "less-loader": "^12.2.0",
     "lodash-es": "^4.17.21",
+    "nprogress": "^0.2.0",
+    "path-to-regexp": "^6.2.2",
+    "pinia": "^2.1.7",
+    "pinia-plugin-persistedstate": "^3.2.1",
+    "pkg-types": "^1.1.1",
+    "qs": "^6.12.1",
     "rollup-plugin-visualizer": "^5.12.0",
     "sortablejs": "^1.15.2",
     "ts-node": "^10.9.2",
     "typescript": "^5.2.2",
+    "unocss": "^0.60.4",
     "vite": "^5.2.0",
+    "vite-plugin-compression": "^0.5.1",
+    "vite-plugin-html": "^3.2.2",
+    "vite-plugin-vue-devtools": "^7.2.1",
+    "vue-router": "^4.3.2",
     "vue-tsc": "^2.0.6"
   }
 }

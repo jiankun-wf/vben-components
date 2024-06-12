@@ -676,7 +676,7 @@ onMounted(() => {
   }
 
   &__fixed-right {
-    transform: rotate(180deg);
+    // transform: rotate(180deg);
   }
 
   &__column-list {

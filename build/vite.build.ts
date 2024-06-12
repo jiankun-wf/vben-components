@@ -1,7 +1,5 @@
 import { defineConfig } from "vite";
-import vue from "@vitejs/plugin-vue";
-import vueJsx from "@vitejs/plugin-vue-jsx";
-import { visualizer } from "rollup-plugin-visualizer";
+import { createPlugins } from "./plugins";
 
 import { resolve } from "path";
 
@@ -10,18 +8,16 @@ const pathResolve = (path: string, lib = true) =>
 
 export default defineConfig(({ command }) => {
   const isBuild = command === "build";
+
+  const plugins = createPlugins({
+    isBuild,
+    root: "./",
+    compress: "gzip",
+    enableAnalyze: true,
+  });
+
   return {
-    plugins: [
-      vue(),
-      vueJsx(),
-      isBuild &&
-        visualizer({
-          filename: "stats.html",
-          gzipSize: true,
-          emitFile: true,
-          open: true,
-        }),
-    ],
+    plugins: plugins,
     resolve: {
       alias: [
         // @/xxxx => src/xxxx

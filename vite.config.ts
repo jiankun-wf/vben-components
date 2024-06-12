@@ -1,8 +1,5 @@
 import { defineConfig } from "vite";
-import vue from "@vitejs/plugin-vue";
-import vueJsx from "@vitejs/plugin-vue-jsx";
-import { visualizer } from "rollup-plugin-visualizer";
-
+import { createPlugins } from "./build/plugins";
 import { resolve } from "path";
 
 const pathResolve = (path: string, lib = true) =>
@@ -11,20 +8,26 @@ const pathResolve = (path: string, lib = true) =>
 // https://vitejs.dev/config/
 export default defineConfig(({ command }) => {
   const isBuild = command === "build";
-
+  const plugins = createPlugins({
+    isBuild,
+    root: "./",
+    compress: "gzip",
+    enableAnalyze: true,
+  });
   return {
-    plugins: [
-      vue(),
-      vueJsx(),
-      isBuild &&
-        visualizer({
-          gzipSize: true,
-          brotliSize: true,
-          emitFile: false,
-          filename: "analyse.html", //分析图生成的文件名
-          open: true, //如果存在本地服务端口，将在打包后自动展示
-        }),
-    ],
+    plugins: plugins,
+    server: {
+      proxy: {
+        "/basic-api": {
+          target: "http://fwh.system.geetype.cn",
+          changeOrigin: true,
+          ws: true,
+          rewrite: (path) => path.replace(new RegExp(`^/basic-api`), ""),
+          // only https
+          // secure: false
+        },
+      },
+    },
     resolve: {
       alias: [
         // @/xxxx => src/xxxx

@@ -56,6 +56,12 @@ declare global {
     target: HTMLInputElement;
   }
 
+  declare type Recordable<T = any> = Record<string, T>;
+  declare type Nullable<T> = T | null;
+
+  declare type TimeoutHandle = ReturnType<typeof setTimeout>;
+  declare type IntervalHandle = ReturnType<typeof setInterval>;
+
   declare interface WheelEvent {
     path?: EventTarget[];
   }

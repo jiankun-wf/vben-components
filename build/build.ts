@@ -8,8 +8,11 @@ const start = async () => {
 
   const updateType = process.argv[2];
 
+  // main-大版本更新 x.0.0, second-小版本更新 1.x.0, smaller-细微更新 1.0.x
   writePackageJson(updateType as "main" | "second" | "smaller");
   writeReadme();
 };
 
 void start();
+
+console.log(import.meta);

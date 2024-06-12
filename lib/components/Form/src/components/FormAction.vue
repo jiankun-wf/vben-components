@@ -49,7 +49,6 @@ import { Form, Col } from "ant-design-vue";
 import { Button, ButtonProps } from "@/components/Button";
 import { BasicArrow } from "@/components/Basic";
 import { useFormContext } from "../hooks/useFormContext";
-// import { useI18n } from "@/hooks/web/useI18n";
 import { propTypes } from "@/utils/propTypes";
 
 defineOptions({ name: "BasicFormAction" });

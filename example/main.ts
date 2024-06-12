@@ -1,5 +1,13 @@
 import { createApp } from "vue";
-import "./style.css";
-import App from "./App.vue";
+import "../release/assets/style.css";
 
-createApp(App).mount("#app");
+import { App, initializeConfiguration } from "../lib/index";
+const startApp = async () => {
+  const app = createApp(App);
+
+  await initializeConfiguration(app);
+
+  app.mount("#app");
+};
+
+startApp();

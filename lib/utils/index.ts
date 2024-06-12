@@ -1,3 +1,7 @@
+import type {
+  RouteLocationNormalized,
+  RouteRecordNormalized,
+} from "vue-router";
 import type { App, Component } from "vue";
 
 import { intersectionWith, isEqual, mergeWith, unionWith } from "lodash-es";
@@ -114,6 +118,23 @@ export function getDynamicProps<T extends Record<string, unknown>, U>(
   });
 
   return ret as Partial<U>;
+}
+
+export function getRawRoute(
+  route: RouteLocationNormalized
+): RouteLocationNormalized {
+  if (!route) return route;
+  const { matched, ...opt } = route;
+  return {
+    ...opt,
+    matched: (matched
+      ? matched.map((item) => ({
+          meta: item.meta,
+          name: item.name,
+          path: item.path,
+        }))
+      : undefined) as RouteRecordNormalized[],
+  };
 }
 
 // https://github.com/vant-ui/vant/issues/8302
