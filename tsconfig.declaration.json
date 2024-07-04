@@ -8,7 +8,7 @@
       "skipLibCheck": true,
   
       /* Bundler mode */
-      "moduleResolution": "Node",
+      "moduleResolution": "bundler",
       "isolatedModules": true,
       "noEmit": false,
       "emitDeclarationOnly": true,
@@ -27,6 +27,8 @@
       "allowUnusedLabels": true,
       "allowUnreachableCode": true,
       "outDir": "release/types",
+      "resolveJsonModule": true,
+      "preserveSymlinks": true,
       "paths": {
         "@/*": ["lib/*"],
         "#/*": ["types/*"]

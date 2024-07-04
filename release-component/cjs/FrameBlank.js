@@ -1,0 +1,1 @@
+"use strict";Object.defineProperty(exports,Symbol.toStringTag,{value:"Module"});const e=require("vue"),n=e.defineComponent({name:"FrameBlank",__name:"FrameBlank",setup(t){return(r,a)=>(e.openBlock(),e.createElementBlock("div"))}});exports.default=n;

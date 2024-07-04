@@ -1,5 +1,4 @@
-// import type { GlobEnvConfig } from "#/config";
-import pkg from "../../package.json";
+import pkg from "../../package.json" assert { type: "json" };
 import { envs } from "@/settings/envSettings";
 export function getCommonStoragePrefix() {
   const { VITE_GLOB_APP_TITLE } = getAppEnvConfig();

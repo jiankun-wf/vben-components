@@ -14,5 +14,3 @@ const start = async () => {
 };
 
 void start();
-
-console.log(import.meta);

@@ -3,7 +3,7 @@ import { createPlugins } from "./build/plugins";
 import { resolve } from "path";
 
 const pathResolve = (path: string, lib = true) =>
-  resolve(`${process.cwd()}`, lib ? "lib" : "", path);
+  resolve(`${process.cwd()}`, lib ? "src" : "", path);
 
 // https://vitejs.dev/config/
 export default defineConfig(({ command }) => {
@@ -12,7 +12,7 @@ export default defineConfig(({ command }) => {
     isBuild,
     root: "./",
     compress: "gzip",
-    enableAnalyze: true,
+    enableAnalyze: false,
   });
   return {
     plugins: plugins,

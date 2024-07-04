@@ -32,10 +32,10 @@ export const createStorage = ({
    * @example
    */
   const WebStorage = class WebStorage {
-    private storage: Storage;
-    private prefixKey?: string;
-    private encryption: Encryption;
-    private hasEncrypt: boolean;
+    public storage: Storage;
+    public prefixKey?: string;
+    public encryption: Encryption;
+    public hasEncrypt: boolean;
     /**
      *
      * @param {*} storage
@@ -47,7 +47,7 @@ export const createStorage = ({
       this.hasEncrypt = hasEncrypt;
     }
 
-    private getKey(key: string) {
+    public getKey(key: string) {
       return `${this.prefixKey}${key}`.toUpperCase();
     }
 

@@ -17,12 +17,7 @@ interface Options {
   enableAnalyze?: boolean;
 }
 
-function createPlugins({
-  isBuild,
-  root,
-  compress,
-  enableAnalyze,
-}: Options) {
+function createPlugins({ isBuild, root, compress, enableAnalyze }: Options) {
   const vitePlugins: (PluginOption | PluginOption[])[] = [
     vue(),
     vueJsx(),

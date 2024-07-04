@@ -1,18 +1,16 @@
 {
-  "name": "vben-components",
+  "name": "vben-system",
   "private": false,
-  "version": "0.0.0",
+  "version": "0.2.0",
   "type": "module",
-  "description": "vben-admin的功能组件提取",
+  "description": "vben-admin 封装",
   "keywords": [
     "vue3",
     "typescript",
     "vben-admin",
     "vue3-low-code"
   ],
-  "exports": {
-    
-  },
+  "exports": {},
   "homepage": "https://github.com/jiankun-wf/vben-components",
   "repository": {
     "type": "git",
@@ -41,6 +39,7 @@
     "@types/sortablejs": "^1.15.8",
     "@vitejs/plugin-vue": "^5.0.4",
     "@vitejs/plugin-vue-jsx": "^3.1.0",
+    "@vue/shared": "^3.4.27",
     "@vueuse/core": "^10.9.0",
     "ant-design-vue": "^4.2.1",
     "axios": "^1.7.2",
@@ -62,6 +61,7 @@
     "ts-node": "^10.9.2",
     "typescript": "^5.2.2",
     "unocss": "^0.60.4",
+    "vben-sys": "^1.0.0",
     "vite": "^5.2.0",
     "vite-plugin-compression": "^0.5.1",
     "vite-plugin-html": "^3.2.2",

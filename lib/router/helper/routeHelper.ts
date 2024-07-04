@@ -9,6 +9,7 @@ import {
 import { cloneDeep, omit } from "lodash-es";
 import { warn } from "@/utils/log";
 import { createRouter, createWebHashHistory } from "vue-router";
+import projectSetting from "@/settings/projectSetting";
 
 export type LayoutMapKey = "LAYOUT";
 const IFRAME = () => import("@/components/AppContext/FrameBlank.vue");
@@ -23,7 +24,7 @@ let dynamicViewsModules: Record<string, () => Promise<Recordable>>;
 // Dynamic introduction
 function asyncImportRoute(routes: AppRouteRecordRaw[] | undefined) {
   dynamicViewsModules =
-    dynamicViewsModules || import.meta.glob("../../views/**/*.{vue,tsx}");
+    dynamicViewsModules || projectSetting.menuSetting.getViewsDir();
   if (!routes) return;
   routes.forEach((item) => {
     if (!item.component && item.meta?.frameSrc) {
@@ -54,7 +55,7 @@ function dynamicImport(
 ) {
   const keys = Object.keys(dynamicViewsModules);
   const matchKeys = keys.filter((key) => {
-    const k = key.replace("../../views", "");
+    const k = key.replace("/src/views", "");
     const startFlag = component.startsWith("/");
     const endFlag = component.endsWith(".vue") || component.endsWith(".tsx");
     const startIndex = startFlag ? 0 : 1;

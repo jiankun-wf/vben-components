@@ -1,0 +1,1 @@
+"use strict";Object.defineProperty(exports,Symbol.toStringTag,{value:"Module"});const e=require("vue"),o=require("./components.js"),t={};function c(r,l){return e.openBlock(),e.createElementBlock("div",null,"Hello World!")}const n=o._export_sfc(t,[["render",c]]);exports.default=n;

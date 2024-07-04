@@ -13,7 +13,7 @@ export default defineConfig(({ command }) => {
     isBuild,
     root: "./",
     compress: "gzip",
-    enableAnalyze: true,
+    enableAnalyze: false,
   });
 
   return {
@@ -49,7 +49,7 @@ export default defineConfig(({ command }) => {
       lib: {
         entry: "lib/index.ts",
         name: "GenericComponents",
-        formats: ["es", "cjs", "iife"],
+        formats: ["es", "cjs"],
       },
       rollupOptions: {
         external: ["vue"],

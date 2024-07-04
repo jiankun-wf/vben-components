@@ -125,6 +125,11 @@ const setting: ProjectConfig = {
     mixSideTrigger: MixSidebarTriggerEnum.CLICK,
     // Fixed expanded menu
     mixSideFixed: false,
+
+    // val
+    getViewsDir() {
+      return import.meta.glob("/src/views/**/*.{vue,tsx}");
+    },
   },
 
   // Multi-label

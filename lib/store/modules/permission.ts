@@ -227,7 +227,8 @@ export const usePermissionStore = defineStore({
           let routeList: AppRouteRecordRaw[] = [];
           try {
             await this.changePermissionCode();
-            routeList = (await requestSettinng.menu()) as AppRouteRecordRaw[];
+            routeList =
+              (await requestSettinng.menu()) as unknown as AppRouteRecordRaw[];
           } catch (error) {
             console.error(error);
           }
