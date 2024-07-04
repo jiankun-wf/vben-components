@@ -1,7 +1,7 @@
 import { createApp } from "vue";
 import "vben-sys/assets/style.css";
 
-import { App, initializeConfiguration } from "vben-sys/es/index.js";
+import { App, initializeConfiguration } from "vben-sys";
 const startApp = async () => {
   const app = createApp(App);
 

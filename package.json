@@ -28,6 +28,7 @@
     "build:lib:smaller": "cross-env NODE_ENV=production vue-tsc && node --loader ts-node/esm ./build/build.ts smaller && tsc -p ./tsconfig.declaration.json"
   },
   "dependencies": {
+    "vben-system": "^0.2.0",
     "vue": "^3.4.21"
   },
   "devDependencies": {
